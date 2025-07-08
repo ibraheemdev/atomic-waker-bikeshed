@@ -1,0 +1,20 @@
+[package]
+name = "atomic-waker-bikeshed"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+
+[dev-dependencies]
+criterion = "0.6.0"
+diatomic-waker = "0.2.3"
+futures-util = "0.3.31"
+
+[[bench]]
+name = "bench"
+harness = false
+
+[profile.release]
+lto = true
+opt-level = 3
+codegen-units = 1
